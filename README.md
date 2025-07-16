@@ -13,8 +13,9 @@ This Terraform module creates an Azure Virtual Network (VNet) with a subnet and 
 ## Usage
 
 ```hcl
-module "azure_vpc" {
-  source              = "./path/to/module"
+module "network" {
+
+  source              = "shivakpkp/network/azure"
   Vnet-name           = var.Vnet_name
   resource_group_name = var.resource_group_name
   location            = var.location
