@@ -25,3 +25,23 @@ module "azure_vpc" {
   security_rule       = var.security_rule
 }
 
+## Inputs
+
+| Name               | Type            | Description                                      | Required |
+|--------------------|------------------|--------------------------------------------------|----------|
+| `vnet-name`         | `string`         | Name of the Virtual Network                      | Yes      |
+| `resource_group_name` | `string`         | Name of the resource group                       | Yes      |
+| `location`          | `string`         | Azure region for the resources                   | Yes      |
+| `address_space`     | `list(string)`   | Address space for the Virtual Network            | Yes      |
+| `subnet_name`       | `string`         | Name of the subnet                               | Yes      |
+| `subnet_prefix`     | `list(string)`   | Address prefix for the subnet                    | Yes      |
+| `nsg_name`          | `string`         | Name of the Network Security Group               | Yes      |
+| `security_rule`     | `list(object)`   | List of security rules for the Network Security Group | No   |
+
+## Outputs
+
+| Name        | Description                            |
+|-------------|----------------------------------------|
+| `vnet_id`    | The ID of the Virtual Network          |
+| `subnet_id`  | The ID of the subnet within the VNet   |
+| `vnet_name`  | The name of the Virtual Network        |
