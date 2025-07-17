@@ -13,3 +13,8 @@ output "vnet_name" {
   sensitive   = false
   description = "The name of the virtual network"
 }
+output "network_security_group_id" {
+  value       = azurerm_network_security_group.nsg.id
+  sensitive   = false
+  description = "The ID of the network security group associated with the subnet"
+}
