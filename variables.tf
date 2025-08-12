@@ -17,14 +17,17 @@ variable "address_space" {
   }
 
 # Subnet variables
-variable "subnet_name" {
-  type        = string
+variable "subnets" {
+  type        = map(object({
+    subnet_prefix = string
+  }))
   description = "Name of the subnet within the virtual network"
 }
-variable "subnet_prefix" {
-  type        = list(string)
-  description = "Subnet prefix for the virtual network"
-}
+
+# variable "subnet_prefix" {
+#   type        = list(string)
+#   description = "Subnet prefix for the virtual network"
+# }
 
 # Network Security Group variables
 variable "nsg_name" {

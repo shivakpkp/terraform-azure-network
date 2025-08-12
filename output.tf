@@ -4,7 +4,7 @@ output "vnet_id" {
   description = "The ID of the virtual network"
 }
 output "subnet_id" {
-  value       = azurerm_subnet.subnet.id
+  value = { for k, v in azurerm_subnet.subnet : k => v.id }
   sensitive   = false
   description = "The ID of the subnet within the virtual network"
 }
